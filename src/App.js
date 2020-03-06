@@ -2,6 +2,7 @@ import React from 'react';
 import MathJax from 'react-mathjax';
 import GregoryLeibniz from './approximations/GregoryLeibniz'
 import Nilakantha from './approximations/Nilakantha'
+import Options from './Options'
 import './App.css';
 
 const options = {
@@ -20,7 +21,7 @@ class App extends React.Component {
     precision: 3
   }
 
-  updatePrecision(event) {
+  updatePrecision = (event) => {
     this.setState({ precision: event.target.value });
   }
 
@@ -28,9 +29,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <label>
-            Elements of precision: <input type="number" value={this.state.precision} onChange={this.updatePrecision.bind(this)} />
-          </label>
+          <Options precision={this.state.precision} onUpdate={this.updatePrecision} />
           <MathJax.Provider options={options}>
             <GregoryLeibniz precision={this.state.precision} />
             <Nilakantha precision={this.state.precision} />
