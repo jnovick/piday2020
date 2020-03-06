@@ -1,5 +1,6 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
+import GregoryLeibniz from './approximations/GregoryLeibniz'
 import './App.css';
 
 const options= {
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <MathJax.Provider options={options}>
-          <MathJax.Node formula={"4 \\left(\\frac{1}{1} - \\frac{1}{3}\\right)"} />
+          <GregoryLeibniz precision={10} />
         </MathJax.Provider>
       </header>
     </div>
