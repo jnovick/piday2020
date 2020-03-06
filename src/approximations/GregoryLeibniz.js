@@ -25,7 +25,7 @@ export default function GregoryLeibniz(props) {
     else {
       result += 4;
     }
-    
+
     if (i < props.visibleElements - 1 || i === props.precision - 1) {
       formula += `\\frac{1}{${denominator}}`;
     }

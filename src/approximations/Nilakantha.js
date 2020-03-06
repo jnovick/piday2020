@@ -25,7 +25,7 @@ export default function Nilakantha(props) {
     else {
       result += delta;
     }
-    
+
     if (i < props.visibleElements - 1 || i === props.precision - 1) {
       formula += `\\frac{1}{${denominator}\\times${denominator + 1}\\times${denominator + 2}}`;
     }
