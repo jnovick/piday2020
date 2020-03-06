@@ -2,6 +2,10 @@
   "name": "piday2020",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "https://github.com/jnovick/piday2020"
+  },
+  "homepage": "https://pi.novickjd.dev",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

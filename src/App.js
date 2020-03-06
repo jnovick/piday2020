@@ -4,6 +4,7 @@ import GregoryLeibniz from './approximations/GregoryLeibniz'
 import Nilakantha from './approximations/Nilakantha'
 import Viete from './approximations/Viete'
 import Options from './Options'
+import GitHubLog from './Github.png'
 import './App.css';
 
 const options = {
@@ -50,6 +51,9 @@ class App extends React.Component {
             <Viete precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
           </div>
         </MathJax.Provider>
+        <a href="https://github.com/jnovick/piday2020" class="github-btn">
+          <img src={GitHubLog} alt="View on GitHub" width="32px" height="32px"/> View on GitHub
+        </a>
       </div>
     );
   }

@@ -14,11 +14,17 @@
   padding: 2vmin;
 }
 
-.EquationLabel{
+.EquationLabel {
   font-weight: bold;
   font-size: large;
 }
 
-.OptionsLabel{
+.OptionsLabel {
   padding: 10px;
+}
+
+.github-btn {
+  font-size: 28px;
+  position: fixed;
+  bottom: 0;
 }
