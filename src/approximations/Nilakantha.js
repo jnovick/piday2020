@@ -10,18 +10,28 @@ export default function Nilakantha(props) {
     let delta = 4 / denominator / (denominator + 1) / (denominator + 2);
     if (i > 0) {
       if (i % 2 === 1) {
-        formula += " - ";
+        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+          formula += " - ";
+        }
         result -= delta;
       }
       else {
-        formula += " + ";
+        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+          formula += " + ";
+        }
         result += delta;
       }
     }
     else {
       result += delta;
     }
-    formula += `\\frac{1}{${denominator}\\times${denominator + 1}\\times${denominator + 2}}`;
+    
+    if (i < props.visibleElements - 1 || i === props.precision - 1) {
+      formula += `\\frac{1}{${denominator}\\times${denominator + 1}\\times${denominator + 2}}`;
+    }
+    else if (i === props.visibleElements - 1) {
+      formula += `\\ldots`;
+    }
   }
 
   formula = `3 + 4 \\left(${formula}\\right)=${result}`;

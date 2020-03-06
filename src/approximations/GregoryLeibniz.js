@@ -10,18 +10,28 @@ export default function GregoryLeibniz(props) {
 
     if (i > 0) {
       if (i % 2 === 1) {
-        formula += " - ";
+        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+          formula += " - ";
+        }
         result -= 4 / denominator;
       }
       else {
-        formula += " + ";
+        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+          formula += " + ";
+        }
         result += 4 / denominator;
       }
     }
     else {
       result += 4;
     }
-    formula += `\\frac{1}{${denominator}}`;
+    
+    if (i < props.visibleElements - 1 || i === props.precision - 1) {
+      formula += `\\frac{1}{${denominator}}`;
+    }
+    else if (i === props.visibleElements - 1) {
+      formula += `\\ldots`;
+    }
   }
 
   formula = `4 \\left(${formula}\\right)=${result}`;

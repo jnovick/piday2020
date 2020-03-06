@@ -18,23 +18,32 @@ const options = {
 
 class App extends React.Component {
   state = {
-    precision: 3
+    precision: 4,
+    visibleElements: 5
   }
 
-  updatePrecision = (event) => {
-    this.setState({ precision: event.target.value });
+  updateOptions = (values) => {
+    this.setState(values);
   }
 
   render() {
+    let { precision, visibleElements } = this.state;
     return (
       <div className="App">
         <header className="App-header">
-          <Options precision={this.state.precision} onUpdate={this.updatePrecision} />
-          <MathJax.Provider options={options}>
-            <GregoryLeibniz precision={this.state.precision} />
-            <Nilakantha precision={this.state.precision} />
-          </MathJax.Provider>
+          &pi; <span role="img" aria-label="pi" className="pi">🥧</span> &pi; Happy Pi Day! &pi; <span role="img" aria-label="pi">🥧</span> &pi;
         </header>
+        <Options precision={precision} visibleElements={visibleElements} onUpdate={this.updateOptions} />
+        <MathJax.Provider options={options}>
+          <div>
+              <span className="EquationLabel">Gregory-Leibniz:</span>
+              <GregoryLeibniz precision={precision} visibleElements={visibleElements} />
+          </div>
+          <div>
+              <span className="EquationLabel">Nilakantha:</span>
+              <Nilakantha precision={precision} visibleElements={visibleElements} />
+          </div>
+        </MathJax.Provider>
       </div>
     );
   }
