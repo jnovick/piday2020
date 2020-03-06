@@ -1,6 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
 import GregoryLeibniz from './approximations/GregoryLeibniz'
+import Nilakantha from './approximations/Nilakantha'
 import './App.css';
 
 const options= {
@@ -20,6 +21,7 @@ function App() {
       <header className="App-header">
         <MathJax.Provider options={options}>
           <GregoryLeibniz precision={10} />
+          <Nilakantha precision={10} />
         </MathJax.Provider>
       </header>
     </div>
