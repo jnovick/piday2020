@@ -1,23 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import MathJax from 'react-mathjax';
 import './App.css';
+
+const options= {
+  tex2jax: {
+      inlineMath: []
+  },
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } },   
+  showMathMenu: false,
+  showMathMenuMSIE: false
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MathJax.Provider options={options}>
+          <MathJax.Node formula={"4 \\left(\\frac{1}{1} - \\frac{1}{3}\\right)"} />
+        </MathJax.Provider>
       </header>
     </div>
   );
