@@ -14,19 +14,6 @@
   padding: 2vmin;
 }
 
-.Equation > div {
-  padding: 10px;
-}
-
-.EquationLabel {
-  font-weight: bold;
-  font-size: large;
-}
-
-.OptionsLabel {
-  padding: 10px;
-}
-
 .github-btn {
   font-size: 28px;
   bottom: 0;

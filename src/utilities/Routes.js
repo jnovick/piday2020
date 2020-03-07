@@ -1,6 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
 import { Switch, Route } from "react-router-dom";
+import "./Routes.css";
 
 export default function NavBar(props) {
   let wrapApproximation = (key, Approximation, addTitle) => {

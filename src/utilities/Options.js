@@ -1,4 +1,5 @@
 import React from 'react';
+import './Options.css';
 
 export default class Options extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class Options extends React.Component {
   }
 
   render = () => (
-    <form onSubmit={this.onSubmit}>
+    <form onSubmit={this.onSubmit} className="Options">
       <label className="OptionsLabel">
         Elements In Sequence: <input type="number" min={1} value={this.state.elementsInSequence} onChange={e => this.setState({ elementsInSequence: e.target.valueAsNumber })} />
       </label>
