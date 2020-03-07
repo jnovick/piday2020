@@ -11,10 +11,10 @@ export default function Viete(props) {
     result *= 2 / Math.sqrt(2 + previous)
     previous = Math.sqrt(2 + previous)
 
-    if (i < props.visibleElements - 1 || (i === props.elementsInSequence - 1 && !props.hideLargeElements)) {
+    if (i < props.visibleElements) {
       formula += `\\times\\frac{2}{\\sqrt{2+${previousFormula}}}`;
     }
-    else if (i === props.visibleElements - 1) {
+    else if (i === props.visibleElements) {
       formula += `\\times\\ldots`;
     }
 

@@ -6,7 +6,6 @@ export default class Options extends React.Component {
     this.state = {};
     this.state.elementsInSequence = props.elementsInSequence;
     this.state.visibleElements = props.visibleElements;
-    this.state.hideLargeElements = props.hideLargeElements;
   }
 
   onSubmit = (event) => {
@@ -21,9 +20,6 @@ export default class Options extends React.Component {
       </label>
       <label className="OptionsLabel">
         Elements to show: <input type="number" min={2} value={this.state.visibleElements} onChange={e => this.setState({ visibleElements: e.target.valueAsNumber })} />
-      </label>
-      <label className="OptionsLabel">
-        Hide large final elements? <input type="checkbox" checked={this.state.hideLargeElements} onChange={e => this.setState({ hideLargeElements: e.target.checked })} />
       </label>
       <input type="submit" value="Submit" />
     </form>
