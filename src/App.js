@@ -40,7 +40,7 @@ class App extends React.Component {
     let approximations = Object.entries({
       "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
       "Nilakantha": Nilakantha,
-      "Liu Hui/Viète": Viete,
+      "Viète": Viete,
       "Wallis": Wallis,
       "Mandava": Madhava,
       "Lord Brouncker": Brouncker,
