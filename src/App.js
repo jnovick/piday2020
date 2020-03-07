@@ -5,6 +5,7 @@ import Nilakantha from './approximations/Nilakantha'
 import Viete from './approximations/Viete'
 import Wallis from './approximations/Wallis'
 import Madhava from './approximations/Madhava'
+import Brouncker from './approximations/Brouncker'
 import Options from './Options'
 import GitHubLog from './Github.png'
 import './App.css';
@@ -37,10 +38,11 @@ class App extends React.Component {
 
     let approximations = Object.entries({
       "Mandava": Madhava,
-      "MadhavaGregoryLeibniz": MadhavaGregoryLeibniz,
+      "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
       "Nilakantha": Nilakantha,
-      "Viete": Viete,
-      "Wallis": Wallis
+      "Viète": Viete,
+      "Wallis": Wallis,
+      "Lord Brouncker": Brouncker
     }).map(x => {
       let key = x[0];
       let Value = x[1];
