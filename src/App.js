@@ -7,6 +7,7 @@ import Wallis from './approximations/Wallis'
 import Madhava from './approximations/Madhava'
 import Brouncker from './approximations/Brouncker'
 import Euler from './approximations/Euler'
+import Newton from './approximations/Newton'
 import Options from './Options'
 import GitHubLog from './Github.png'
 import './App.css';
@@ -46,6 +47,7 @@ class App extends React.Component {
       "Mandava": Madhava,
       "Lord Brouncker": Brouncker,
       "Euler": Euler,
+      "Newton / Euler Convergence Transformation": Newton,
     }).map(x => {
       let key = x[0];
       let Value = x[1];
