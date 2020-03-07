@@ -14,6 +14,11 @@ export default function NavBar(props) {
   return (
     <nav>
       <ul>
+        <li key="GitHub">
+          <a href="https://github.com/jnovick/piday2020" className="github-btn" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </li>
         <li key="all">
           <NavLink exact to="/" activeClassName="active">All</NavLink>
         </li>

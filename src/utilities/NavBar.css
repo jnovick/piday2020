@@ -26,3 +26,17 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+
+img {
+  vertical-align: middle;
+  height: 18px;
+  padding: 0px;
+  margin: 0px;
+  padding: -14px;
+}
+
+.github-btn {
+  vertical-align: middle;
+  background-color: darkblue;
+  color: white;
+}

@@ -12,7 +12,6 @@ import Newton from './approximations/Newton'
 import Options from './utilities/Options'
 import NavBar from './utilities/NavBar'
 import Routes from './utilities/Routes'
-import GitHubLog from './Github.png'
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -70,9 +69,6 @@ class App extends React.Component {
               approximations={approximationsDict} />
           </div>
         </Router>
-        <a href="https://github.com/jnovick/piday2020" className="github-btn">
-          <img src={GitHubLog} alt="View on GitHub" width="32px" height="32px" /> View on GitHub
-        </a>
       </div>
     );
   }
