@@ -17,7 +17,8 @@ const options = {
   "HTML-CSS": { linebreaks: { automatic: true } },
   SVG: { linebreaks: { automatic: true } },
   showMathMenu: false,
-  showMathMenuMSIE: false
+  showMathMenuMSIE: false,
+  displayAlign: "left"
 }
 
 class App extends React.Component {
