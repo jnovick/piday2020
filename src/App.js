@@ -6,6 +6,7 @@ import Viete from './approximations/Viete'
 import Wallis from './approximations/Wallis'
 import Madhava from './approximations/Madhava'
 import Brouncker from './approximations/Brouncker'
+import Euler from './approximations/Euler'
 import Options from './Options'
 import GitHubLog from './Github.png'
 import './App.css';
@@ -37,12 +38,13 @@ class App extends React.Component {
     let { precision, visibleElements, hideLargeElements } = this.state;
 
     let approximations = Object.entries({
-      "Mandava": Madhava,
       "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
       "Nilakantha": Nilakantha,
-      "Viète": Viete,
+      "Liu Hui/Viète": Viete,
       "Wallis": Wallis,
-      "Lord Brouncker": Brouncker
+      "Mandava": Madhava,
+      "Lord Brouncker": Brouncker,
+      "Euler": Euler,
     }).map(x => {
       let key = x[0];
       let Value = x[1];
