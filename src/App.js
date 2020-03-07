@@ -18,27 +18,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import './App.css';
 
-const options = {
-  tex2jax: {
-    inlineMath: []
-  },
-  CommonHTML: { linebreaks: { automatic: true } },
-  "HTML-CSS": { linebreaks: { automatic: true } },
-  SVG: { linebreaks: { automatic: true } },
-  showMathMenu: true,
-  showMathMenuMSIE: true,
-  menuSettings: {
-    zoom: "Double-Click"
-  },
-  displayAlign: "left"
-}
-
 class App extends React.Component {
   state = {
     elementsInSequence: 5,
     visibleElements: 3,
     precision: 20,
-    visibleDecimalPoints: 5
+    visibleDecimalPoints: 5,
+    zoomPercent: 600
   }
 
   updateOptions = (values) => {
@@ -46,7 +32,7 @@ class App extends React.Component {
   }
 
   render() {
-    let { elementsInSequence, visibleElements, precision, visibleDecimalPoints } = this.state;
+    let { elementsInSequence, visibleElements, precision, visibleDecimalPoints, zoomPercent } = this.state;
 
     let approximationsDict = {
       "Lord Brouncker": Brouncker,
@@ -58,8 +44,6 @@ class App extends React.Component {
       "Mandava": Madhava,
       "Viète": Viete
     };
-
-
 
     return (
       <div className="App">
@@ -75,13 +59,14 @@ class App extends React.Component {
               visibleElements={visibleElements}
               visibleDecimalPoints={visibleDecimalPoints}
               precision={precision}
+              zoomPercent={zoomPercent}
               onUpdate={this.updateOptions} />
             <Routes
               elementsInSequence={elementsInSequence}
               visibleElements={visibleElements}
               visibleDecimalPoints={visibleDecimalPoints}
               precision={precision}
-              options={options}
+              zoomPercent={zoomPercent}
               approximations={approximationsDict} />
           </div>
         </Router>
