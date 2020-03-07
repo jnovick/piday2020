@@ -33,6 +33,17 @@ class App extends React.Component {
 
   render() {
     let { precision, visibleElements, hideLargeElements } = this.state;
+
+    let approximations = [Madhava, MadhavaGregoryLeibniz, Nilakantha, Viete, Wallis]
+      .map(X => (
+        <div key={X.name}>
+          <span className="EquationLabel">{X.name}:</span>
+          <span className="Equation">
+            <X precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements}/>
+          </span>
+        </div>
+      ));
+
     return (
       <div className="App">
         <header className="App-header">
@@ -40,29 +51,10 @@ class App extends React.Component {
         </header>
         <Options precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} onUpdate={this.updateOptions} />
         <MathJax.Provider options={options}>
-          <div>
-            <span className="EquationLabel">Madhava-Gregory-Leibniz:</span>
-            <MadhavaGregoryLeibniz precision={precision} visibleElements={visibleElements} />
-          </div>
-          <div>
-            <span className="EquationLabel">Nilakantha:</span>
-            <Nilakantha precision={precision} visibleElements={visibleElements} />
-          </div>
-          <div>
-            <span className="EquationLabel">Viete:</span>
-            <Viete precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
-          </div>
-          <div>
-            <span className="EquationLabel">Wallis:</span>
-            <Wallis precision={precision} visibleElements={visibleElements} />
-          </div>
-          <div>
-            <span className="EquationLabel">Madhava:</span>
-            <Madhava precision={precision} visibleElements={visibleElements} />
-          </div>
+          {approximations}
         </MathJax.Provider>
         <a href="https://github.com/jnovick/piday2020" className="github-btn">
-          <img src={GitHubLog} alt="View on GitHub" width="32px" height="32px"/> View on GitHub
+          <img src={GitHubLog} alt="View on GitHub" width="32px" height="32px" /> View on GitHub
         </a>
       </div>
     );
