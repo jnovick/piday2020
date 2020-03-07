@@ -40,14 +40,14 @@ class App extends React.Component {
     let { elementsInSequence, visibleElements, precision, visibleDecimalPoints } = this.state;
 
     let approximations = Object.entries({
-      "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
-      "Nilakantha": Nilakantha,
-      "Viète": Viete,
-      "Wallis": Wallis,
-      "Mandava": Madhava,
       "Lord Brouncker": Brouncker,
+      "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
       "Euler": Euler,
+      "Wallis": Wallis,
+      "Nilakantha": Nilakantha,
       "Newton / Euler Convergence Transformation": Newton,
+      "Mandava": Madhava,
+      "Viète": Viete,
     }).map(x => {
       let key = x[0];
       let Value = x[1];
