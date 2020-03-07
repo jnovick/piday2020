@@ -19,8 +19,11 @@ const options = {
   CommonHTML: { linebreaks: { automatic: true } },
   "HTML-CSS": { linebreaks: { automatic: true } },
   SVG: { linebreaks: { automatic: true } },
-  showMathMenu: false,
-  showMathMenuMSIE: false,
+  showMathMenu: true,
+  showMathMenuMSIE: true,
+  menuSettings:{
+    zoom: "Double-Click"
+  },
   displayAlign: "left"
 }
 
