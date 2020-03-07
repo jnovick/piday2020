@@ -5,8 +5,8 @@ import { Decimal } from "decimal.js";
 export default function Newton(props) {
   Decimal.set({ precision: props.precision })
 
-  let formula = "";
-  let result = Decimal(0);
+  let formula = "1";
+  let result = Decimal(1);
 
   if(props.elementsInSequence > props.visibleElements){
     formula = "\\ldots";
@@ -17,7 +17,7 @@ export default function Newton(props) {
     result = result.times(i).dividedBy(denominator).plus(1);
 
     if (i <= props.visibleElements) {
-      formula = `\\frac{${i}}{${denominator.toNumber()}}\\left(1+${formula}\\right)`;
+      formula = `1+\\frac{${i}}{${denominator.toNumber()}}\\left(${formula}\\right)`;
     }
   }
 

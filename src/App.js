@@ -74,11 +74,13 @@ class App extends React.Component {
               elementsInSequence={elementsInSequence}
               visibleElements={visibleElements}
               visibleDecimalPoints={visibleDecimalPoints}
-              onUpdate={this.updateOptions} precision={precision} />
+              precision={precision}
+              onUpdate={this.updateOptions} />
             <Routes
               elementsInSequence={elementsInSequence}
               visibleElements={visibleElements}
               visibleDecimalPoints={visibleDecimalPoints}
+              precision={precision}
               options={options}
               approximations={approximationsDict} />
           </div>
