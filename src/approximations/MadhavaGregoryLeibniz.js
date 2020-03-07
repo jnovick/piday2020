@@ -1,7 +1,7 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
 
-export default function GregoryLeibniz(props) {
+export default function MadhavaGregoryLeibniz(props) {
   let formula = "";
   let result = 0;
 

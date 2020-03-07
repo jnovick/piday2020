@@ -1,9 +1,10 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
-import GregoryLeibniz from './approximations/GregoryLeibniz'
+import MadhavaGregoryLeibniz from './approximations/MadhavaGregoryLeibniz'
 import Nilakantha from './approximations/Nilakantha'
 import Viete from './approximations/Viete'
 import Wallis from './approximations/Wallis'
+import Madhava from './approximations/Madhava'
 import Options from './Options'
 import GitHubLog from './Github.png'
 import './App.css';
@@ -40,8 +41,8 @@ class App extends React.Component {
         <Options precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} onUpdate={this.updateOptions} />
         <MathJax.Provider options={options}>
           <div>
-            <span className="EquationLabel">Gregory-Leibniz:</span>
-            <GregoryLeibniz precision={precision} visibleElements={visibleElements} />
+            <span className="EquationLabel">Madhava-Gregory-Leibniz:</span>
+            <MadhavaGregoryLeibniz precision={precision} visibleElements={visibleElements} />
           </div>
           <div>
             <span className="EquationLabel">Nilakantha:</span>
@@ -54,6 +55,10 @@ class App extends React.Component {
           <div>
             <span className="EquationLabel">Wallis:</span>
             <Wallis precision={precision} visibleElements={visibleElements} />
+          </div>
+          <div>
+            <span className="EquationLabel">Madhava:</span>
+            <Madhava precision={precision} visibleElements={visibleElements} />
           </div>
         </MathJax.Provider>
         <a href="https://github.com/jnovick/piday2020" className="github-btn">
