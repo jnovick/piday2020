@@ -23,7 +23,7 @@ class App extends React.Component {
     visibleElements: 3,
     precision: 20,
     visibleDecimalPoints: 5,
-    zoomPercent: 600
+    zoomPercent: 200
   }
 
   updateOptions = (values) => {
