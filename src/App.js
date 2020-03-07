@@ -35,15 +35,24 @@ class App extends React.Component {
   render() {
     let { precision, visibleElements, hideLargeElements } = this.state;
 
-    let approximations = [Madhava, MadhavaGregoryLeibniz, Nilakantha, Viete, Wallis]
-      .map(X => (
-        <div key={X.name}>
-          <span className="EquationLabel">{X.name}:</span>
+    let approximations = Object.entries({
+      "Mandava": Madhava,
+      "MadhavaGregoryLeibniz": MadhavaGregoryLeibniz,
+      "Nilakantha": Nilakantha,
+      "Viete": Viete,
+      "Wallis": Wallis
+    }).map(x => {
+      let key = x[0];
+      let Value = x[1];
+      return (
+        <div key={key}>
+          <span className="EquationLabel">{key}:</span>
           <span className="Equation">
-            <X precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements}/>
+            <Value precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
           </span>
         </div>
-      ));
+      );
+    });
 
     return (
       <div className="App">
