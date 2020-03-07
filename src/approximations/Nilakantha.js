@@ -1,29 +1,32 @@
 import React from 'react';
 import MathJax from 'react-mathjax';
+import { Decimal } from "decimal.js";
 
 export default function Nilakantha(props) {
+  Decimal.set({ precision: props.precision });
+
   let formula = "";
-  let result = 3;
+  let result = Decimal(3);
 
   for (let i = 0; i < props.elementsInSequence; i++) {
-    let denominator = 2 * i + 2;
-    let delta = 4 / denominator / (denominator + 1) / (denominator + 2);
+    let denominator = Decimal.mul(2, i).plus(2);
+    let delta = Decimal.div(4, Decimal(denominator).times(denominator.plus(1)).times(denominator.plus(2)));
     if (i > 0) {
       if (i % 2 === 1) {
         if (i <= props.visibleElements - 1 || i === props.elementsInSequence - 1) {
           formula += " - ";
         }
-        result -= delta;
+        result = result.minus(delta);
       }
       else {
         if (i <= props.visibleElements - 1 || i === props.elementsInSequence - 1) {
           formula += " + ";
         }
-        result += delta;
+        result = result.plus(delta);
       }
     }
     else {
-      result += delta;
+      result = result.plus(delta);
     }
 
     if (i < props.visibleElements - 1 || i === props.elementsInSequence - 1) {
@@ -34,6 +37,6 @@ export default function Nilakantha(props) {
     }
   }
 
-  formula = `3 + 4 \\left(${formula}\\right)=${result}`;
+  formula = `3 + 4 \\left(${formula}\\right)=${result.toFixed(props.visibleDecimalPoints)}`;
   return <MathJax.Node formula={formula} />
 }
