@@ -30,7 +30,7 @@ export default function Nilakantha(props) {
     }
 
     if (i < props.visibleElements - 1 || i === props.elementsInSequence - 1) {
-      formula += `\\frac{1}{${denominator}\\times${denominator + 1}\\times${denominator + 2}}`;
+      formula += `\\frac{1}{${denominator}\\times${denominator.plus(1)}\\times${denominator.plus(2)}}`;
     }
     else if (i === props.visibleElements - 1) {
       formula += `\\ldots`;
