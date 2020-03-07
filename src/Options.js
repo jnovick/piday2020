@@ -4,7 +4,7 @@ export default class Options extends React.Component {
   constructor(props) {
     super();
     this.state = {};
-    this.state.precision = props.precision;
+    this.state.elementsInSequence = props.elementsInSequence;
     this.state.visibleElements = props.visibleElements;
     this.state.hideLargeElements = props.hideLargeElements;
   }
@@ -17,7 +17,7 @@ export default class Options extends React.Component {
   render = () => (
     <form onSubmit={this.onSubmit}>
       <label className="OptionsLabel">
-        Elements of precision: <input type="number" min={1} value={this.state.precision} onChange={e => this.setState({ precision: e.target.valueAsNumber })} />
+        Elements In Sequence: <input type="number" min={1} value={this.state.elementsInSequence} onChange={e => this.setState({ elementsInSequence: e.target.valueAsNumber })} />
       </label>
       <label className="OptionsLabel">
         Elements to show: <input type="number" min={2} value={this.state.visibleElements} onChange={e => this.setState({ visibleElements: e.target.valueAsNumber })} />

@@ -5,18 +5,18 @@ export default function Nilakantha(props) {
   let formula = "";
   let result = 3;
 
-  for (let i = 0; i < props.precision; i++) {
+  for (let i = 0; i < props.elementsInSequence; i++) {
     let denominator = 2 * i + 2;
     let delta = 4 / denominator / (denominator + 1) / (denominator + 2);
     if (i > 0) {
       if (i % 2 === 1) {
-        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+        if (i <= props.visibleElements - 1 || i === props.elementsInSequence - 1) {
           formula += " - ";
         }
         result -= delta;
       }
       else {
-        if (i <= props.visibleElements - 1 || i === props.precision - 1) {
+        if (i <= props.visibleElements - 1 || i === props.elementsInSequence - 1) {
           formula += " + ";
         }
         result += delta;
@@ -26,7 +26,7 @@ export default function Nilakantha(props) {
       result += delta;
     }
 
-    if (i < props.visibleElements - 1 || i === props.precision - 1) {
+    if (i < props.visibleElements - 1 || i === props.elementsInSequence - 1) {
       formula += `\\frac{1}{${denominator}\\times${denominator + 1}\\times${denominator + 2}}`;
     }
     else if (i === props.visibleElements - 1) {

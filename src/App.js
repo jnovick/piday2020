@@ -25,7 +25,7 @@ const options = {
 
 class App extends React.Component {
   state = {
-    precision: 5,
+    elementsInSequence: 5,
     visibleElements: 3,
     hideLargeElements: true
   }
@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   render() {
-    let { precision, visibleElements, hideLargeElements } = this.state;
+    let { elementsInSequence, visibleElements, hideLargeElements } = this.state;
 
     let approximations = Object.entries({
       "Madhava-Gregory-Leibniz": MadhavaGregoryLeibniz,
@@ -52,7 +52,7 @@ class App extends React.Component {
         <div key={key}>
           <span className="EquationLabel">{key}:</span>
           <span className="Equation">
-            <Value precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
+            <Value elementsInSequence={elementsInSequence} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
           </span>
         </div>
       );
@@ -63,7 +63,7 @@ class App extends React.Component {
         <header className="App-header">
           &pi; <span role="img" aria-label="pi" className="pi">🥧</span> &pi; Happy Pi Day! &pi; <span role="img" aria-label="pi">🥧</span> &pi;
         </header>
-        <Options precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} onUpdate={this.updateOptions} />
+        <Options elementsInSequence={elementsInSequence} visibleElements={visibleElements} hideLargeElements={hideLargeElements} onUpdate={this.updateOptions} />
         <MathJax.Provider options={options}>
           {approximations}
         </MathJax.Provider>

@@ -5,9 +5,9 @@ export default function Euler(props) {
   let formula = "\\frac{1}{1^{2}}";
   let result = 1;
 
-  for (let i = 2; i <= props.precision; i++) {
+  for (let i = 2; i <= props.elementsInSequence; i++) {
     result += 1 / Math.pow(i, 2);
-    if (i < props.visibleElements || i === props.precision) {
+    if (i < props.visibleElements || i === props.elementsInSequence) {
       formula += `+\\frac{1}{${i}^{2}}`;
     }
     else if (i === props.visibleElements) {
