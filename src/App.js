@@ -3,6 +3,7 @@ import MathJax from 'react-mathjax';
 import GregoryLeibniz from './approximations/GregoryLeibniz'
 import Nilakantha from './approximations/Nilakantha'
 import Viete from './approximations/Viete'
+import Wallis from './approximations/Wallis'
 import Options from './Options'
 import GitHubLog from './Github.png'
 import './App.css';
@@ -20,9 +21,9 @@ const options = {
 
 class App extends React.Component {
   state = {
-    precision: 4,
-    visibleElements: 5,
-    hideLargeElements: false
+    precision: 5,
+    visibleElements: 3,
+    hideLargeElements: true
   }
 
   updateOptions = (values) => {
@@ -50,8 +51,12 @@ class App extends React.Component {
             <span className="EquationLabel">Viete:</span>
             <Viete precision={precision} visibleElements={visibleElements} hideLargeElements={hideLargeElements} />
           </div>
+          <div>
+            <span className="EquationLabel">Wallis:</span>
+            <Wallis precision={precision} visibleElements={visibleElements} />
+          </div>
         </MathJax.Provider>
-        <a href="https://github.com/jnovick/piday2020" class="github-btn">
+        <a href="https://github.com/jnovick/piday2020" className="github-btn">
           <img src={GitHubLog} alt="View on GitHub" width="32px" height="32px"/> View on GitHub
         </a>
       </div>
